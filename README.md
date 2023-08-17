@@ -1,7 +1,10 @@
-## What it does
+# Info
+This addon is not verified or available on AMO (addons.firefox.org) and is intended to be installed by hand.
 
-This extension allows the user to specify an upper limit for tabs open at the same time.
+# Prerequisites
+You have to set "xpinstall.signatures.required" to "false" in "about:config". Otherwise the manual installation will be denied.
 
-## What it shows
-
-It displays the number of currently opened tabs.
+</br>
+---
+</br>
+>Fork of https://github.com/gebirgsbaerbel/max-tabs-limit</h5>
