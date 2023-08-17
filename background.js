@@ -26,13 +26,6 @@ function updateCount(tabId, isOnRemoved) {
     // Do not block any about pages except for newTab. about:home and about:welcome are also blocked as they start an about:newTab page first.
     isBlockable = !isPreferencesWindow || isNewTabWindow;
     if (!isOnRemoved && length > maxTabs && isBlockable) {
-      let content = `Max Tabs Limit: ${maxTabs}`;
-      browser.notifications.create({
-        "type": "basic",
-        "iconUrl": browser.runtime.getURL("icons/link-48.png"),
-        "title": "Too many tabs opened",
-        "message": content
-      });
       browser.tabs.remove(tabId.id);
     }
 
@@ -91,7 +84,7 @@ function retrievedMaxTabs(value) {
 }
 
 function setMaxTabsDefaultValue() {
-  maxTabsDefault = 50;
+  maxTabsDefault = 1;
   maxTabs = maxTabsDefault;
   browser.storage.local.set({
     "maxTabs": maxTabsDefault
